@@ -1,5 +1,7 @@
 package com.example.simpleparadox.listycity;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -37,9 +39,24 @@ public class CityList {
         return list;
     }
 
+    /**
+     * This returns the size of the list of cities
+     * @return
+     */
     public int countCities(){
         List<City> list = cities;
         return list.size();
+    }
+    /**
+     * This delete a specified city object from the list
+     */
+    public void deleteCity(City city){
+        if(cities.contains(city)){
+            cities.remove(city);
+        }
+        else {
+            throw new IllegalArgumentException();
+        }
     }
 
 }
